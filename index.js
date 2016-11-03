@@ -12,6 +12,8 @@ app.get('/', function(req, res){
 });
 
 var initialized = false;
+var gameLoop;
+var running = false;
 io.on('connection', function(socket){
     socket.on('up', function(msg){
         map.update('up', msg, getPlayer(socket));
@@ -40,11 +42,23 @@ io.on('connection', function(socket){
         io.emit('update', map);
     });
 
+    socket.on('togglePause', function(){
+        if(running) {
+            clearInterval(gameLoop);
+            running = false;
+        } else
+        if(!running) {
+            gameLoop = setInterval(()=> {
+                map.ball.update(map);
+                io.emit('update', map);
+            }, 300);
+            running = true;
+        }
+    });
+
     if(!initialized) {
-        setInterval(()=> {
-            map.ball.update(map);
-            io.emit('update', map);
-        }, 300);
+        map.ball.update(map);
+        io.emit('update', map);
         initialized = true;
     }
 });

@@ -18,6 +18,10 @@ $('.player2').on('click', () => {
     location.reload();
 });
 
+function togglePause(){
+    socket.emit('togglePause');
+}
+
 function createCookie(name, value, days) {
     var expires;
 
