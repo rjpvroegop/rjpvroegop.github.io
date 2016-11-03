@@ -38,7 +38,7 @@ io.on('connection', function(socket){
         map.player1score = 0;
         map.player2score = 0;
         io.emit('update', map);
-    })
+    });
 
     if(!initialized) {
         setInterval(()=> {
