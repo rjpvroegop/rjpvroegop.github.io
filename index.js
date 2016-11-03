@@ -51,7 +51,7 @@ io.on('connection', function(socket){
             gameLoop = setInterval(()=> {
                 map.ball.update(map);
                 io.emit('update', map);
-            }, 300);
+            }, 30);
             running = true;
         }
     });

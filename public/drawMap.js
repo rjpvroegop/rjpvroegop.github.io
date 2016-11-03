@@ -6,14 +6,14 @@ function draw(canvas) {
 
     ctx.beginPath();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.arc(20 * map.ball.x + 10, 20 * map.ball.y, 10, 0, 2 * Math.PI);
+    ctx.arc(2 * map.ball.x + 1, 2 * map.ball.y, 10, 0, 2 * Math.PI);
     ctx.fillStyle = "#FF0000";
     ctx.fill();
 
-    ctx.rect(20 * map.player1loc, 5, 20, 5);
+    ctx.rect(20 * map.player1loc, 5, 10, 5);
     ctx.fillStyle = "#FF0000";
     ctx.fill();
-    ctx.rect(20 * map.player2loc, 190, 20, 5);
+    ctx.rect(20 * map.player2loc, 190, 10, 5);
     ctx.fillStyle = "#FF0000";
     ctx.fill();
     ctx.closePath();

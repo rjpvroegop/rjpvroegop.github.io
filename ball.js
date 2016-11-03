@@ -1,18 +1,18 @@
 exports.ball = {
-    x: 5,
-    y: 5,
+    x: 50,
+    y: 50,
     right: true,
     up: true,
     scored: true,
 
     update: function (map) {
-        if (this.y == 9) {
+        if (this.y == 90) {
             this.up = false;
-        } else if (this.y == 1) {
+        } else if (this.y == 10) {
             this.up = true;
         }
 
-        if (this.x == 19) {
+        if (this.x == 190) {
             this.right = false;
         } else if (this.x == 0) {
             this.right = true;
@@ -33,18 +33,17 @@ exports.ball = {
         this.updateScore(map);
     },
     updateScore: function(map){
-        console.log(this.scored, map.player1score, map.player2score);
-        if(this.y == 2 || this.y == 8){
+        if(this.y == 20 || this.y == 80){
             this.scored = false;
         }
         if(!this.scored) {
-            if (this.y == 1) {
-                if (this.x != map.player1loc) {
+            if (this.y == 10) {
+                if (this.x / 10 != map.player1loc) {
                     this.scored = true;
                     map.player2score ++;
                 }
-            } else if (this.y == 9) {
-                if (this.x != map.player2loc) {
+            } else if (this.y == 90) {
+                if (this.x / 10 != map.player2loc) {
                     this.scored = true;
                     map.player1score ++;
                 }

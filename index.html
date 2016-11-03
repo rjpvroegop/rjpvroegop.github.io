@@ -4,16 +4,23 @@
     <title>Socket.IO chat</title>
 </head>
 <body>
-<button class="player1">player1</button>
-<button class="player2">player2</button>
-<button onclick="reset()">reset</button>
-<button onclick="togglePause()">play/pause</button>
 
-<canvas style="border:1px solid black;width:400px;height:200px;">
+<div>
+    <button class="player1">player1</button>
+    <button class="player2">player2</button>
+    <button onclick="reset()">reset</button>
+    <button onclick="togglePause()">play/pause</button>
+</div>
 
-</canvas>
+<div>
+    <canvas style="border:1px solid black;width:400px;height:200px;">
 
-<h1 class="score"></h1>
+    </canvas>
+</div>
+
+<div>
+    <h1 class="score"></h1>
+</div>
 
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
